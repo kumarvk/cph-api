@@ -1,24 +1,17 @@
-# README
+# cph-api
+- Create a ruby on rails repo.
+- Gems used
+* `nokogiri`
+* `pg`
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+- `git clone https://github.com/kumarvk/cph-api.git`
 
-* Ruby version
+- `bundle install`
 
-* System dependencies
+- `rails db:create` and `rails db:migrate`
 
-* Configuration
+- `rails cph:flights`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `rails s`
