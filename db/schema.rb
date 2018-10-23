@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 2018_10_16_083733) do
   enable_extension "plpgsql"
 
   create_table "flights", force: :cascade do |t|
-    t.string "f_type"
+    t.string "type"
     t.datetime "exact_time"
     t.datetime "expected_time"
     t.text "destination"
+    t.string "flight_no"
     t.string "airline"
     t.string "status"
     t.datetime "created_at", null: false
