@@ -5,7 +5,7 @@ class Api::Flights::ArrivalsController < ApplicationController
   end
 
   def search
-    flights = Arrival.filter(params)
-    render json: {flights: flights.page(params[:page]), total_count: flights.page(params[:page]).total_count}
+    flights = Arrival.filter(params).page(params[:page])
+    render json: {flights: flights, total_count: flights.total_count}
   end
 end

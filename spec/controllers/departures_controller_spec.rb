@@ -35,5 +35,14 @@ RSpec.describe  Api::Flights::DeparturesController, type: :controller do
       expect(data["flights"].count).to eq(2)
       expect(data["total_count"]).to eq(7)
     end
+
+    it "get all departures flight without any filters" do
+      get :search, params: {filter: {text: "", time: ""}}, format: :json
+      data = JSON.parse(response.body)
+
+      expect(response).to have_http_status(:ok)
+      expect(data["flights"].count).to eq(5)
+      expect(data["total_count"]).to eq(11)
+    end
   end
 end
