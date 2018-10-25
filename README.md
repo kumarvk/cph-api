@@ -27,12 +27,15 @@
 * Used `whenever`gem for getting all records at every day from cph website through cron job.
 
 ## Installation
-
 * Take clone of the repo:`git clone https://github.com/kumarvk/cph-api`
 
 * Then `bundle install`
 
 * For database do `rails db:create` and `rails db:migrate`
+
+* Create log file for cron job `log/whenever.log`
+
+* For test enviourment database do `rails db:migrate RAILS_ENV=test`
 
 * For scraping `rails cph:flights`
 
@@ -41,44 +44,45 @@
 * Run test cases `rspec`
 
 ## Endpoints
-
 * Get all dispatures flights.
 
   `GET  /api/flights/departures`
-
+```
   params {
     page: 1 //its optional
   }
-
+```
 * Search departures flights.
 
   `GET /api/flights/departures/search`
-
+```
   params {
     page: 1 // its optional
     text: "Test" // its optional
     time: "00:00" // its optional
+    date: new Date() // its optional
   }
-
+```
 * Get all arrivals flights.
 
   `GET  /api/flights/arrivals`
-
+```
   params {
     page: 1 // optional
   }
-
+```
 * Search departures flights.
 
   `GET  /api/flights/arrivals/search`
-
+```
   params {
     page: 1 // optional
     text: "Test" // optional
     time: "00:00" //its optional
+    date: new Date() //its optional
   }
+```
 
 ## Note
-
 * If you want to log of scrapping then see log file.
   `log/whenever.log`

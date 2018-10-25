@@ -3,7 +3,7 @@ class Flight < ApplicationRecord
   def self.filter(params)
     cond = ""
     values = {}
-    filter = hash.is_a?(String) ? JSON.parse(params[:filter]) : params[:filter]
+    filter = params[:filter].is_a?(String) ? JSON.parse(params[:filter]) : params[:filter]
 
     if filter["text"].present?
       cond = "(destination ~* :s OR airline ~* :s OR status ~* :s OR flight_no ~* :s) "
