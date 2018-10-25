@@ -1,6 +1,6 @@
 class Api::Flights::ArrivalsController < ApplicationController
   def index
-    flights = Arrival.page(params[:page]).order("exact_time asc")
+    flights = Arrival.where("date::date = ?", Date.today).page(params[:page]).order("exact_time asc")
     render json: {flights: flights, total_count: flights.total_count}
   end
 

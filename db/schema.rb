@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_083733) do
 
   create_table "flights", force: :cascade do |t|
     t.string "type"
+    t.datetime "date"
     t.datetime "exact_time"
     t.datetime "expected_time"
     t.text "destination"

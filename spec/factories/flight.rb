@@ -8,6 +8,7 @@ FactoryBot.define do
 
   factory :flight do
     type "Arrival"
+    date Time.now
     exact_time { FactoryBot.generate(:exact_time) }
     expected_time nil
     destination { FactoryBot.generate(:destination) }
